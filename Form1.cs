@@ -56,7 +56,7 @@ namespace Notes
                 btnDelete.BackColor = Color.White;
             };
             LoadNotes();
-            SetPlaceholder(textBoxTitle, "Введите заголовок заметки"); // создаем плейсхолдер
+            SetPlaceholder(textBoxTitle, "Введите заголовок заметки"); // создаем плейсхолдеры
             SetPlaceholder(richTextBoxNote, "Введите содержимое заметки");
         }
         private void ClearNoteFields()
@@ -68,7 +68,7 @@ namespace Notes
             SetPlaceholder(textBoxTitle, "Введите заголовок заметки");
             SetPlaceholder(richTextBoxNote, "Введите содержимое заметки");
         }
-        protected override void OnShown(EventArgs e)
+        protected override void OnShown(EventArgs e) // далем так, чтобы при запуске курсор не находился ни в одном поле
         {
             base.OnShown(e);
             this.ActiveControl = null;
@@ -103,7 +103,7 @@ namespace Notes
         }
         private EventHandler TextBoxEnterHandler;
         private EventHandler TextBoxLeaveHandler;
-        private void listBoxNotes_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxNotes_SelectedIndexChanged(object sender, EventArgs e) // отображаем в полях справа выбранную заметку из списка слева
         {
             if (listBoxNotes.SelectedItem == null) return;
             string selected = listBoxNotes.SelectedItem.ToString();
@@ -132,11 +132,10 @@ namespace Notes
         }
         private void btnAdd_Click(object sender, EventArgs e) // создаем скрипт, чтобы по нажатию на кнопку "добавить" заметка добавлялась в БД
         {
-            ClearNoteFields();
             string title = textBoxTitle.Text.Trim();
             string content = richTextBoxNote.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(title))
+            if (string.IsNullOrWhiteSpace(title) || title == "Введите заголовок заметки")
             {
                 MessageBox.Show("Введите заголовок заметки.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -154,12 +153,11 @@ namespace Notes
                     cmd.ExecuteNonQuery();
                 }
             }
-
             MessageBox.Show("Заметка добавлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            textBoxTitle.Clear();
-            richTextBoxNote.Clear();
+            ClearNoteFields();
             LoadNotes();
         }
+
         private void btnUpdate_Click(object sender, EventArgs e) // редактирование заметок
         {
             if (listBoxNotes.SelectedItem == null)
@@ -267,7 +265,7 @@ namespace Notes
             richTextBoxNote.Clear();
         }
 
-        private void btnExportPDF_Click(object sender, EventArgs e)
+        private void btnExportPDF_Click(object sender, EventArgs e) // дополнительно: экспорт заметки в пдф-формате
         {
             if (string.IsNullOrWhiteSpace(textBoxTitle.Text) && string.IsNullOrWhiteSpace(richTextBoxNote.Text))
             {
@@ -309,13 +307,12 @@ namespace Notes
         {
 
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // кнопка "о нас"
         {
             AboutForm aboutForm = new AboutForm();
             aboutForm.ShowDialog();
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) // кнопка выхода
         {
             Application.Exit();
         }

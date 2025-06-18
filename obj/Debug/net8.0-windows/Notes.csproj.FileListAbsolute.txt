@@ -38,3 +38,4 @@ M:\3 Прожектс\VS\Notes\Notes\obj\Debug\net8.0-windows\Notes.pdb
 M:\3 Прожектс\VS\Notes\Notes\obj\Debug\net8.0-windows\Notes.genruntimeconfig.cache
 M:\3 Прожектс\VS\Notes\Notes\obj\Debug\net8.0-windows\ref\Notes.dll
 M:\3 Прожектс\VS\Notes\Notes\obj\Debug\net8.0-windows\Notes.AboutForm.resources
+M:\3 Прожектс\VS\Notes\Notes\obj\Debug\net8.0-windows\Notes.sourcelink.json
