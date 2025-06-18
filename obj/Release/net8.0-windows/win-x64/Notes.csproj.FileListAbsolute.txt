@@ -1,0 +1,8 @@
+M:\3 Прожектс\VS\Notes\Notes\obj\Release\net8.0-windows\win-x64\Notes.csproj.AssemblyReference.cache
+M:\3 Прожектс\VS\Notes\Notes\obj\Release\net8.0-windows\win-x64\Notes.AboutForm.resources
+M:\3 Прожектс\VS\Notes\Notes\obj\Release\net8.0-windows\win-x64\Notes.Form1.resources
+M:\3 Прожектс\VS\Notes\Notes\obj\Release\net8.0-windows\win-x64\Notes.csproj.GenerateResource.cache
+M:\3 Прожектс\VS\Notes\Notes\obj\Release\net8.0-windows\win-x64\Notes.GeneratedMSBuildEditorConfig.editorconfig
+M:\3 Прожектс\VS\Notes\Notes\obj\Release\net8.0-windows\win-x64\Notes.AssemblyInfoInputs.cache
+M:\3 Прожектс\VS\Notes\Notes\obj\Release\net8.0-windows\win-x64\Notes.AssemblyInfo.cs
+M:\3 Прожектс\VS\Notes\Notes\obj\Release\net8.0-windows\win-x64\Notes.csproj.CoreCompileInputs.cache
